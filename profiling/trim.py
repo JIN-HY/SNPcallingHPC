@@ -29,7 +29,7 @@ indir = opts.indir
 outdir = opts.outdir
 pattern1 = opts.pattern1
 pattern2 = opts.pattern2
-group = opts.n
+group = int(opts.n)
 info = opts.info
 
 def trimcommand(input1, input2, pair1, unpair1, pair2, unpair2):
@@ -80,4 +80,4 @@ for cmd in cmds:
         n = 0
         i += 1
         fslurm = open("trim"+str(i)+".slurm", "w")
-        fslurm.write(slurm_job)
+        fslurm.write(slurm_head(str(i)))
